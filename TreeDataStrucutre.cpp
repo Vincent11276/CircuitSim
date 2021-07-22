@@ -59,7 +59,7 @@ typedef enum
 {
     Anode,
     Cathode
-} NodeType;
+} TerminalType;
 
 
 class Component
