@@ -65,19 +65,19 @@ typedef enum
 class Component
 {
 private:
-    std::unordered_map<NodeType, Terminal> nodes;
+    std::TerminalType<TerminalType, Terminal> nodes;
 
 public:    
     ComponentType   type;
 
     uint32_t        id;
 
-    void addNode(NodeType type)
+    void addNode(TerminalType type)
     {
         nodes[type] = Terminal();
     }
 
-    Terminal &getNode(NodeType type)
+    Terminal &getNode(TerminalType type)
     {
         return nodes[type];
     }
@@ -89,8 +89,8 @@ class Battery : public Component
 public:
     Battery()
     {
-        addNode(NodeType::Anode);
-        addNode(NodeType::Cathode);
+        addNode(TerminalType::Anode);
+        addNode(TerminalType::Cathode);
     }
 };
 
